@@ -47,7 +47,8 @@ public class EventAdapter extends BaseAdapter {
         TextView eventDescription = (TextView) convertView.findViewById( R.id.event_description);
 
         ImageView imageView = convertView.findViewById(R.id.event_thumbnail);
-        Picasso.get().load("http://www.urbanfarmhub.org/wp­content/uploads/2012/07/apple.png").into(imageView);
+        Picasso.get().load("http://www.urbanfarmhub.org/wp-content/uploads/2012/07/apple.png").into(imageView);
+        //Picasso.get().load(R.drawable.event_thumbnail).into(imageView);
 
         Event r = eventData.get(position);
         eventTitle.setText(r.getTitle());
