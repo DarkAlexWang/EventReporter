@@ -7,8 +7,10 @@ import androidx.fragment.app.FragmentManager;
 import android.content.res.Configuration;
 import android.util.Log;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ListView;
 import android.widget.ArrayAdapter;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements
     EventFragment.OnItemSelectListener {
@@ -24,6 +26,14 @@ public class MainActivity extends AppCompatActivity implements
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Log.e("Life cycle test", "We are at onCreat()");
+        TextView view = findViewById(R.id.text);
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            }
+
+        });
         // Show different fragments based on screen size.
        // if (findViewById(R.id.fragment_container) != null) {
        // Fragment fragment = isTablet() ? new CommentFragment() : new EventFragment();
