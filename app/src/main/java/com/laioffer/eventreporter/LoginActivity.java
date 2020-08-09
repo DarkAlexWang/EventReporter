@@ -71,8 +71,10 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
                         if (dataSnapshot.hasChild(username) && (password.equals(dataSnapshot.child(username).child("password").getValue()))) {
-                            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                            startActivity(intent);
+                            Log.i("Your log", "You successfully login");
+                            Intent myIntent = new Intent(LoginActivity.this, EventActivity.class);
+                            Utils.username = username;
+                            startActivity(myIntent);
                         } else {
                             Toast.makeText(getBaseContext(), "Please login again", Toast.LENGTH_SHORT).show();
                         }

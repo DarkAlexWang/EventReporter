@@ -8,6 +8,8 @@ import java.nio.charset.Charset;
 import java.security.MessageDigest;
 
 public class Utils {
+    public static String username = null;
+
     public static String md5Encryption(final String input) {
         String result = "";
         try {
