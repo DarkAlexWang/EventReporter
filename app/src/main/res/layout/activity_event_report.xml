@@ -2,7 +2,7 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:orientation="vertical">
 
     <RelativeLayout
@@ -69,6 +69,17 @@
         android:layout_gravity="center_horizontal"
         android:hint="See something, say something"
         />
+
+    <ImageView
+        android:id="@+id/img_event_picture_capture"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edit_text_event_content"
+        android:layout_centerVertical="true"
+        android:adjustViewBounds="true"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:visibility="gone" />
 
     <RelativeLayout
         android:layout_height="50dp"
