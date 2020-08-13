@@ -4,11 +4,24 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -17,6 +30,11 @@ import android.widget.ImageView;
  */
 public class EventsFragment extends Fragment {
     private ImageView mImageViewAdd;
+    private RecyclerView recyclerView;
+    private RecyclerView.Adapter mAdapter;
+    private RecyclerView.LayoutManager mLayoutManager;
+    private DatabaseReference database;
+    private List<Event> events;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -71,6 +89,56 @@ public class EventsFragment extends Fragment {
                 startActivity(eventReportIntent);
             }
         });
+
+        recyclerView = (RecyclerView) view.findViewById(R.id.event_recycler_view);
+        database = FirebaseDatabase.getInstance().getReference();
+        recyclerView.setHasFixedSize(true);
+        mLayoutManager = new LinearLayoutManager(getContext());
+        recyclerView.setLayoutManager(mLayoutManager);
+        setAdapter();
         return view;
+    }
+
+    /**
+     * get data from database and adapt to recyclerview
+     */
+    public void setAdapter() {
+        events = new ArrayList<Event>();
+        database.child("events").addListenerForSingleValueEvent(new ValueEventListener() { // read data
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for (DataSnapshot noteDataSnapshot : dataSnapshot.getChildren()) { // read all uploaded events
+                    Event event = noteDataSnapshot.getValue(Event.class);
+                    events.add(event);
+                }
+                // sorted the events by reported time
+                Collections.sort(events, new Comparator<Event>() {
+                    @Override
+                    public int compare(Event e1, Event e2) {
+                        long t1 = e1.getTime();
+                        long t2 = e2.getTime();
+                        if (t1 == t2) {
+                            return 0;
+                        }
+                        return t1 < t2 ? 1 : -1;
+                    }
+                });
+
+                mAdapter = new EventListAdapter(events); // set adapter
+                recyclerView.setAdapter(mAdapter);
+                //mAdapter = new EventListAdapter(events, getActivity()); // set adapter
+                //if (recyclerView.getAdapter() != null) { // update activity
+                //    mAdapter.notifyDataSetChanged();
+                //} else { // render new activity
+                //    recyclerView.setAdapter(mAdapter);
+                //}
+                //setUpAndLoadNativeExpressAds(); // load ads
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                //TODO: do something
+            }
+        });
     }
 }
