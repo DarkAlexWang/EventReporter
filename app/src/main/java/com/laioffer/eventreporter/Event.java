@@ -12,7 +12,7 @@ public class Event implements Serializable {
     private String id;
     private long time;
     private String username;
-    private String imgUrl;
+    private String imgUri;
 
     public Event() {}
     /**
@@ -72,11 +72,11 @@ public class Event implements Serializable {
         this.username = username;
     }
 
-    public String getImgUrl() {
-        return imgUrl;
+    public String getImgUri() {
+        return imgUri;
     }
 
-    public void setImgUrl(String imgUrl) {
-        this.imgUrl = imgUrl;
+    public void setImgUri(String imgUri) {
+        this.imgUri = imgUri;
     }
 }

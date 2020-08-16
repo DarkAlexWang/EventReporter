@@ -87,7 +87,7 @@ since there might N events showing in list
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_below="@+id/event_good_number"
-                android:src="@drawable/ic_launcher_background"
+                android:src="@drawable/like"
                 android:id="@+id/event_good_img"
                 />
         </LinearLayout>
@@ -107,7 +107,7 @@ since there might N events showing in list
             <ImageView
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:src="@drawable/ic_launcher_background"
+                android:src="@drawable/comment"
                 android:id="@+id/event_comment_img"
                 />
         </LinearLayout>

@@ -124,14 +124,14 @@ public class EventsFragment extends Fragment {
                     }
                 });
 
-                mAdapter = new EventListAdapter(events); // set adapter
+                mAdapter = new EventListAdapter(events, getActivity()); // set adapter
                 recyclerView.setAdapter(mAdapter);
-                //mAdapter = new EventListAdapter(events, getActivity()); // set adapter
-                //if (recyclerView.getAdapter() != null) { // update activity
-                //    mAdapter.notifyDataSetChanged();
-                //} else { // render new activity
-                //    recyclerView.setAdapter(mAdapter);
-                //}
+                mAdapter = new EventListAdapter(events, getActivity()); // set adapter
+                if (recyclerView.getAdapter() != null) { // update activity
+                    mAdapter.notifyDataSetChanged();
+                } else { // render new activity
+                    recyclerView.setAdapter(mAdapter);
+                }
                 //setUpAndLoadNativeExpressAds(); // load ads
             }
 
