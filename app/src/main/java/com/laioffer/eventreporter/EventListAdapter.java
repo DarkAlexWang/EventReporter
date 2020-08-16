@@ -17,12 +17,17 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import java.util.List;
 
 public class EventListAdapter extends RecyclerView.Adapter<EventListAdapter.ViewHolder> {
     private List<Event> eventList;
     private DatabaseReference databaseReference;
+    // Set variables ready for uploading images
+    private FirebaseStorage storage;
+    private StorageReference storageRef;
 
     /**
      * Constructor for EventListAdapter
@@ -70,7 +75,6 @@ public class EventListAdapter extends RecyclerView.Adapter<EventListAdapter.View
 
         if (event.getImgUri() != null) {
             final String url = event.getImgUri();
-            System.out.println(url);
             holder.imgview.setVisibility(View.VISIBLE);
             new AsyncTask<Void, Void, Bitmap>(){
                 @Override

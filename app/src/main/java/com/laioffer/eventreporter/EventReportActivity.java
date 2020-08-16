@@ -30,6 +30,8 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
+import org.json.JSONArray;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -241,9 +243,9 @@ public class EventReportActivity extends AppCompatActivity {
             return;
         }
         final StorageReference imgRef = storageRef.child("images/" + mImgUri.getLastPathSegment() + "_"
-                + System.currentTimeMillis());
+                + System.currentTimeMillis()); // set unique id for each image -> folder + path + time
 
-        UploadTask uploadTask = imgRef.putFile(mImgUri);
+        UploadTask uploadTask = imgRef.putFile(mImgUri); // 1: upload to cloud storage
 
         // Register observers to listen for when the download is done or if it fails
         uploadTask.addOnFailureListener(new OnFailureListener() {
@@ -255,15 +257,25 @@ public class EventReportActivity extends AppCompatActivity {
             @Override
             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                 @SuppressWarnings("VisibleForTests")
-                Task<Uri> downloadUrl = imgRef.getDownloadUrl();
-                Log.i(TAG, "Upload Successfully" + eventId);
-                database.child("events").child(eventId).child("imgUri").
-                    setValue(downloadUrl.toString());
+                Task<Uri> downloadUrl = imgRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                    // Old .getDownloadUrl is depreciated, and return a Task<uri>
+                    @Override
+                    public void onSuccess(Uri uri) {
+                        Log.i(TAG, "Upload Successfully" + eventId);
+                        database.child("events").child(eventId).child("imgUri").
+                            setValue(uri.toString()); //2: upload image url to database
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                       e.printStackTrace();
+                    }
+                });
             }
         });
     }
 
-    // Add authentification Listener when activity starts
+    // Add authtification Listener when activity starts
         @Override
         public void onStart() {
                 super.onStart();
