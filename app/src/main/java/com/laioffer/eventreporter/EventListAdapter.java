@@ -1,6 +1,8 @@
 package com.laioffer.eventreporter;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.AsyncTask;
 import android.view.LayoutInflater;
@@ -28,13 +30,15 @@ public class EventListAdapter extends RecyclerView.Adapter<EventListAdapter.View
     // Set variables ready for uploading images
     private FirebaseStorage storage;
     private StorageReference storageRef;
+    private Context context;
 
     /**
      * Constructor for EventListAdapter
      * @param events events that are showing on screen
-     * @param activity
+     * @param context
      */
-    public EventListAdapter(List<Event> events, FragmentActivity activity) {
+    public EventListAdapter(List<Event> events, Context context) {
+        this.context = context;
         eventList = events;
         databaseReference = FirebaseDatabase.getInstance().getReference();
     }
@@ -114,7 +118,16 @@ public class EventListAdapter extends RecyclerView.Adapter<EventListAdapter.View
                 });
             }
         });
-
+        // listen to "event" -> start CommentActivity -> load corresponding event and comments information
+        holder.layout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, CommentActivity.class); // explicit intent, current EventsFragment -> specific CommentActivity
+                String eventId = event.getId();
+                intent.putExtra("EventID", eventId);
+                context.startActivity(intent);
+            }
+        });
     }
 
     /**

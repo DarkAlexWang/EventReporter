@@ -13,6 +13,9 @@ public class Event implements Serializable {
     private long time;
     private String username;
     private String imgUri;
+    private int commentNumber;
+    private double latitude;
+    private double longitude;
 
     public Event() {}
     /**
@@ -78,5 +81,29 @@ public class Event implements Serializable {
 
     public void setImgUri(String imgUri) {
         this.imgUri = imgUri;
+    }
+
+    public int getCommentNumber() {
+        return commentNumber;
+    }
+
+    public void setCommentNumber(int commentNumber) {
+        this.commentNumber = commentNumber;
+    }
+
+    public double getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
+    }
+
+    public double getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
     }
 }
