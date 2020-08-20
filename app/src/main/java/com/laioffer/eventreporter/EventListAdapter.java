@@ -211,7 +211,7 @@ public class EventListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
                 break;
             case TYPE_ADS:
                 ViewHolderAds viewHolderAds = (ViewHolderAds) holder;
-                configureAdsView(viewHolderAds, position);
+                refreshAd(viewHolderAds.frameLayout);
                 break;
         }
     }

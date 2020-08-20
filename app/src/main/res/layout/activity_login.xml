@@ -39,6 +39,15 @@
         android:id="@+id/editTextPassword"
         android:inputType="textPassword"
         android:layout_gravity="center_horizontal" />
+
+    <!-- choose password visible-->
+    <CheckBox
+        android:layout_below="@+id/editTextPassword"
+        android:id="@+id/pwdvisible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="password visible" />
+
     <!-- button to login-->
     <Button
         android:layout_width="match_parent"
@@ -58,13 +67,15 @@
         android:background="@drawable/login_buttons"
         android:fontFamily="Roboto"
         android:id="@+id/register" />
-<com.google.android.gms.ads.AdView
-    android:id="@+id/adView"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_centerHorizontal="true"
-    android:layout_alignParentBottom="true"
-    ads:adSize="BANNER"
-    ads:adUnitId="@string/banner_ad_unit_id">
-</com.google.android.gms.ads.AdView>
+
+    <!-- AdMob -->
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/banner_ad_unit_id">
+    </com.google.android.gms.ads.AdView>
 </LinearLayout>
