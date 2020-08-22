@@ -1,11 +1,8 @@
 package com.laioffer.eventreporter;
 
-import android.app.Activity;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.location.Location;
-import android.net.Uri;
-import android.os.Message;
 import android.util.Log;
 
 import org.apache.commons.codec.binary.Hex;
@@ -77,21 +74,6 @@ public class Utils {
                 Log.e("Error: ", e.getMessage().toString());
             }
         }
-        /**
-         *
-    public static Bitmap getBitmapFromURI(Activity activity, Uri imguri) {
-        Bitmap bitmap = null;
-        if (bitmap == null) {
-            try {
-                InputStream input = activity.getContentResolver().openInputStream(imguri); // 2: get some input data
-                bitmap = BitmapFactory.decodeStream(input); // 3: decode input stream data to bitmap
-
-            } catch (IOException e) {
-                e.printStackTrace();
-                Log.e("Error: ", e.getMessage().toString());
-            }
-        }
-         */
         return bitmap;
     }
 
