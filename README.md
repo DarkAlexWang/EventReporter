@@ -74,13 +74,13 @@ Use Google Firebase Database to store and manage UGC:
 
 ### Show all events
 
-<img src="https://raw.githubusercontent.com/Wangxh329/AndroidEventReporter/master/EventReporter/doc/eventlist.png" width="480px" height="853px" alt="events fragment">
+<img src="https://raw.githubusercontent.com/DarkAlexWang/EventReporter/master/EventReporter/doc/eventlist.png" width="480px" height="853px" alt="events fragment">
 
 > events fragment
 
 ### Event details and make comments
 
-<img src="https://raw.githubusercontent.com/Wangxh329/AndroidEventReporter/master/EventReporter/doc/comment.png" width="480px" height="853px" alt="comment activity">
+<img src="https://raw.githubusercontent.com/DarkAlexWang/EventReporter/master/EventReporter/doc/comment.png" width="480px" height="853px" alt="comment activity">
 
 > comment activity
 
@@ -93,5 +93,11 @@ Use Google Firebase Database to store and manage UGC:
 ### Show nearby events in Google Map
 
 <img src="https://raw.githubusercontent.com/Wangxh329/AndroidEventReporter/master/EventReporter/doc/map.png" width="480px" height="853px" alt="event map fragment">
+
+> event map fragment
+>
+### Show Notification Locally
+
+<img src="https://raw.githubusercontent.com/DarkAlexWang/EventReporter/master/EventReporter/doc/notification.png" width="480px" height="853px" alt="FCM Messaging fragment">
 
 > event map fragment

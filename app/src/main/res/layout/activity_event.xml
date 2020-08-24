@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -20,5 +21,6 @@
         app:itemBackground="@color/cardview_light_background"
         app:itemIconTint="@android:color/darker_gray"
         app:itemTextColor="@android:color/darker_gray"
-        app:menu="@menu/event_navigation_items" /> <!-- import items from menu to manage conveniently. add each item into menu folder-->
+        app:menu="@menu/event_navigation_items"
+        tools:ignore="PrivateResource" /> <!-- import items from menu to manage conveniently. add each item into menu folder-->
 </RelativeLayout>
