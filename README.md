@@ -14,7 +14,7 @@
 	* Integrated in-app advertising (**Google AdMob**) to display Google advertisers and interact with users.
 
 ## Infrastructure Design
-![infrastructure design](https://raw.githubusercontent.com/Wangxh329/AndroidEventReporter/master/EventReporter/doc/Infrastructure.png)
+![infrastructure design](https://raw.githubusercontent.com/DarkAlexWang/EventReporter/master/doc/Infrastructure.png)
 > Activity and Fragment design
 
 - `MainActivity`: for login and register.
@@ -35,19 +35,19 @@
 Use Google Firebase Database to store and manage UGC:
 ### users
 
-<img src="https://raw.githubusercontent.com/Wangxh329/AndroidEventReporter/master/EventReporter/doc/users.png" width="577px" height="277px" alt="users collection design">
+<img src="https://raw.githubusercontent.com/DarkAlexWang/EventReporter/master/doc/users.png" width="577px" height="277px" alt="users collection design">
 
 > users collection design
 
 ### events
 
-<img src="https://raw.githubusercontent.com/Wangxh329/AndroidEventReporter/master/EventReporter/doc/events.png" width="577px" height="669px" alt="events collection design">
+<img src="https://raw.githubusercontent.com/DarkAlexWang/EventReporter/master/doc/events.png" width="577px" height="669px" alt="events collection design">
 
 > events collection design
 
 ### comments
 
-<img src="https://raw.githubusercontent.com/Wangxh329/AndroidEventReporter/master/EventReporter/doc/comments.png" width="577px" height="750px" alt="comments collection design">
+<img src="https://raw.githubusercontent.com/DarkAlexWang/EventReporter/master/doc/comments.png" width="577px" height="750px" alt="comments collection design">
 
 > comments collection design
 
@@ -68,36 +68,36 @@ Use Google Firebase Database to store and manage UGC:
 ## Application Screenshot
 ### Login and register
 
-<img src="https://raw.githubusercontent.com/Wangxh329/AndroidEventReporter/master/EventReporter/doc/login.png" width="480px" height="853px" alt="login and register activity">
+<img src="https://raw.githubusercontent.com/DarkAlexWang/EventReporter/master/doc/login.png" width="480px" height="853px" alt="login and register activity">
 
 > login and register activity
 
 ### Show all events
 
-<img src="https://raw.githubusercontent.com/DarkAlexWang/EventReporter/master/EventReporter/doc/eventlist.png" width="480px" height="853px" alt="events fragment">
+<img src="https://raw.githubusercontent.com/DarkAlexWang/EventReporter/master/doc/eventlist.png" width="480px" height="853px" alt="events fragment">
 
 > events fragment
 
 ### Event details and make comments
 
-<img src="https://raw.githubusercontent.com/DarkAlexWang/EventReporter/master/EventReporter/doc/comment.png" width="480px" height="853px" alt="comment activity">
+<img src="https://raw.githubusercontent.com/DarkAlexWang/EventReporter/master/doc/comment.png" width="480px" height="853px" alt="comment activity">
 
 > comment activity
 
 ### Report new event
 
-<img src="https://raw.githubusercontent.com/Wangxh329/AndroidEventReporter/master/EventReporter/doc/report.png" width="480px" height="853px" alt="event report activity">
+<img src="https://raw.githubusercontent.com/DarkAlexWang/EventReporter/master/doc/report.png" width="480px" height="853px" alt="event report activity">
 
 > event report activity
 
 ### Show nearby events in Google Map
 
-<img src="https://raw.githubusercontent.com/Wangxh329/AndroidEventReporter/master/EventReporter/doc/map.png" width="480px" height="853px" alt="event map fragment">
+<img src="https://raw.githubusercontent.com/DarkAlexWang/EventReporter/master/doc/map.png" width="480px" height="853px" alt="event map fragment">
 
 > event map fragment
 >
 ### Show Notification Locally
 
-<img src="https://raw.githubusercontent.com/DarkAlexWang/EventReporter/master/EventReporter/doc/notification.png" width="480px" height="853px" alt="FCM Messaging fragment">
+<img src="https://raw.githubusercontent.com/DarkAlexWang/EventReporter/master/doc/notification.png" width="480px" height="853px" alt="FCM Messaging fragment">
 
 > event map fragment
