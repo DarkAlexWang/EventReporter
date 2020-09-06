@@ -18,6 +18,8 @@ import java.util.concurrent.TimeUnit;
 public class Utils {
     public static String username = null;
 
+    public static final double LOC_SHAKE = 0.02;
+
     public static String md5Encryption(final String input) {
         String result = "";
         try {

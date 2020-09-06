@@ -20,6 +20,9 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyAdIy4wb6q7ayAgR6QZVVE_A2mogTq8Yt8" />
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts"/>
         <activity android:name=".MainActivity" />
         <activity
             android:name=".LoginActivity"
@@ -38,6 +41,12 @@
         <service android:name=".MyFirebaseMessagingService">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <service
+            android:name=".MyFirebaseInstanceIDService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
             </intent-filter>
         </service>
         <!-- make sure bottom layout will not be overrode because of typing into something like keyboard rise up -->

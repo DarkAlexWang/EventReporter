@@ -114,16 +114,19 @@ public class EventMapFragment extends Fragment implements OnMapReadyCallback,
         locationTracker.getLocation();
         double curLatitude = locationTracker.getLatitude();
         double curLongitude = locationTracker.getLongitude();
+        // Set up camera configuration, set camera to latitude, longitude and zoom
         CameraPosition cameraPosition = new CameraPosition.Builder().target(new LatLng(curLatitude, curLongitude)).zoom(12).build();
-        googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition)); // animate the zoom process
+
+        // Animate the zoom process
+        googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
 
         // 1: mark current location
         // create marker
-        MarkerOptions marker = new MarkerOptions().position(new LatLng(curLatitude, curLongitude)).title("Your location");
+       // MarkerOptions marker = new MarkerOptions().position(new LatLng(curLatitude, curLongitude)).title("Your location");
         // Changing marker icon
-        marker.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE));
+        //marker.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE));
         // adding marker
-        googleMap.addMarker(marker);
+        //googleMap.addMarker(marker);
         // 2: mark events nearby
         setUpMarkersCloseToCurLocation(googleMap, curLatitude, curLongitude);
     }

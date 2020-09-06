@@ -16,7 +16,9 @@ public class MyFirebaseInstanceIDService extends FirebaseInstanceIdService {
        // If you want tot send messages to this application instance or
        // Manage this apps subscriptions on the server side, send the
        // Instance ID token to your app server.
-       //sendRegistrationToServer(refreshedToken);
+       sendRegistrationToServer(refreshedToken);
     }
+    private void sendRegistrationToServer(String token) {
 
+    }
 }

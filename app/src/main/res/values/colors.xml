@@ -3,4 +3,9 @@
     <color name="colorPrimary">#6200EE</color>
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
+    <color name="Aqua">#00FFFF</color>
+    <color name="Maroon">#800000</color>
+    <color name="Orange">#FF5733</color>
+    <color name="Lime">#00FF00</color>
+    <color name="Lemon">#FFF44F</color>
 </resources>

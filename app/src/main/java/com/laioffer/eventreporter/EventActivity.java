@@ -21,8 +21,11 @@ public class EventActivity extends AppCompatActivity {
         if (mEventsFragment == null) {
             mEventsFragment = new EventsFragment();
         }
+
+        mEventMapFragment = new EventMapFragment();
+
         // default show events list
-        getSupportFragmentManager().beginTransaction().add(R.id.relativelayout_event, mEventsFragment).commit(); // add fragment to activity
+        getSupportFragmentManager().beginTransaction().add(R.id.relativelayout_event, mEventMapFragment).commit(); // add fragment to activity
 
         // lazy loading(when using the fragment map, we then load it)
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.navigation);
