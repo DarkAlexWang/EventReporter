@@ -13,7 +13,7 @@
 	* Used **Google Firebase (Database and Storage)** to store and manage UGC including comments, images, descriptions, title, geolocations, etc.
 	* Integrated in-app advertising (**Google AdMob**) to display Google advertisers and interact with users.
 
-[EventReporter Demo](https://imgur.com/gallery/JtEQi2mgur.com/gallery/JtEQi2ss)
+[EventReporter Demo](https://imgur.com/gallery/JtEQi2s)
 
 ## Infrastructure Design
 ![infrastructure design](https://raw.githubusercontent.com/DarkAlexWang/EventReporter/master/doc/Infrastructure.png)
